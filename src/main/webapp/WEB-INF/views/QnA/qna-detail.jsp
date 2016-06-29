@@ -11,7 +11,7 @@
          <li><a href="${pageContext.request.contextPath}/index.dvn">홈</a></li>
          <li><a href="${pageContext.request.contextPath}/QnA.dvn">1:1
                문의&건의</a></li>
-         <li class="active">글 상세보기</li>
+         <li class="active">글 상세보기 ${notice.boardcontent}</li>
       </ol>
 
       <div class="col-md-12 no-padding margin-bottom-10">
@@ -115,13 +115,13 @@
                         <td scope="col" class="ellipsis">
 
                            <div class="row">
-                              <span class="reply-writer" name="">${n.userid} </span> 
-                              <span class="reply-date" name="" >${n.replydate}</span>
+                              <span class="reply-writer" >${n.userid} </span> 
+                              <span class="reply-date" >${n.replydate}</span>
                               <input type="hidden" value="1">
                            </div>
 
                            <div class="row">
-                              <p class="ellipsis reply-content" name="">
+                              <p class="ellipsis reply-content">
                                  <span>${n.replycontent}</span>
                               </p>
                            </div>
@@ -141,8 +141,6 @@
 
                            <div id="reply-navbar" class="navbar-collapse collapse">
                               <ul class="nav navbar-nav navbar-right">
-                                 <!-- <li class="nav_menu"><a href="#" class="btn btn-default">댓글</a></li>
-                                  <li class="nav_menu"><a href="#" class="btn btn-default">수정</a></li> -->
                                  <li class="nav_menu">
                                     <a href="${pageContext.request.contextPath}/QnA/deleteReply.dvn?boardseq=${n.boardseq}&replynum=${n.replynum}" class="btn btn-default">삭제</a></li>
                               </ul>
