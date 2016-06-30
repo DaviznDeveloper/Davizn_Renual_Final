@@ -9,7 +9,7 @@
                <div class="col-md-12 content-container">
    
                   <ol class="breadcrumb">
-                     <li><a href="${pageContext.request.contextPath}/ui/index.jsp">홈</a></li>
+                     <li><a href="${pageContext.request.contextPath}/index.dvn">홈</a></li>
                      <li class="active">1:1 문의&건의</li>
                   </ol>
                   

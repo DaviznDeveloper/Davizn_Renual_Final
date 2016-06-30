@@ -23,11 +23,12 @@ public class QandAReply {
 			return "redirect:/QnA/Qnadetail2.dvn?boardseq="+n.getBoardseq();
 		}
 		
+		//댓글 삭제
 		public String delReply(int replynum, String userid) throws ClassNotFoundException, SQLException{
 			System.out.println("시퀀스 :"+replynum);
 			QandAreplyDAO QandAreplyDao = SqlSession.getMapper(QandAreplyDAO.class);
 			QandAreplyDao.deleteReply(replynum);
 
-			return "redirect:/QnA/Qnadetail.dvn";
+			return "redirect:/QnA/Qnadetail2.dvn";
 		}
 }

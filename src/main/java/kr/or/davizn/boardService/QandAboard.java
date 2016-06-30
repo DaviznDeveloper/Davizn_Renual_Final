@@ -75,7 +75,6 @@ public class QandAboard {
 		String result=QandAboardDao.checkPwd(boardseq);
 		System.out.println("결과 :"+result);
 		System.out.println("000000");
-		System.out.println(notice);
 		notice.setBoardpwd(result);
 		return notice;
 	}

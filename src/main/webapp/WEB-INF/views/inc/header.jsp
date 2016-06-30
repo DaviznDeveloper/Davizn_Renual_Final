@@ -109,7 +109,7 @@
             <se:authorize access="hasRole('ROLE_USER')">
                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                   <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
-                  <span class="badge h-menu-tran-badge-notice">${alarmcount}</span>
+                  <span class="badge h-menu-tran-badge-notice">${alarmCount}</span>
                </a>
                <ul class="dropdown-menu">
                   <c:set var="notice" value="${alarmList}" />
@@ -121,15 +121,15 @@
                      <c:otherwise>
                         <c:forEach items="${alarmList}" var="al">
                            <li>
-                              <a href="${pageContext.request.contextPath}/main-profile.navigation">
-                                 ${al.datatype} ${al.dataname}일정이 종료되었습니다.
-                              </a>
+                              <a href="${pageContext.request.contextPath}/personalData/detailPersonalData2.dvn?datatype=${al.datatype}&strgseq=${al.strgseq}&dataseq=${al.dataseq}&alarmseq=${al.alarmseq}">
+											${al.datatype} ${al.dataname}일정이 종료되었습니다.
+								</a>
                            </li>
                         </c:forEach>
                      </c:otherwise>
                   </c:choose>
                   <li class="vertical-middle padding-vertical text-center">
-                     <a href="${pageContext.request.contextPath}/main-profile.navigation">
+                     <a href="${pageContext.request.contextPath}/wholeAlarm.dvn">
                         <span class="notice-header-span notice-header-all">전체 알림 보기</span>
                      </a>
                   </li>

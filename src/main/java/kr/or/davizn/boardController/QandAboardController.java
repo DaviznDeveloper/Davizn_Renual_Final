@@ -55,8 +55,8 @@ public class QandAboardController {
 		}
 		model.addAttribute("user", user);
 		model.addAttribute("replylist", replylist);
-		model.addAttribute("notice", notice);
-		System.out.println("컨트롤러 노티스"+notice);
+		model.addAttribute("notice1", notice);
+		
 		return view;
 
 	}
@@ -73,7 +73,7 @@ public class QandAboardController {
 		String view="QnA.qna-detail";
 		model.addAttribute("user", user);
 		model.addAttribute("replylist", replylist);
-		model.addAttribute("notice", notice);
+		model.addAttribute("notice1", notice);
 		
 		return view;
 

@@ -24,7 +24,7 @@ public class QandAReplyController {
 	public String noticeReg(QandAReplyDTO dto, HttpServletRequest request)
 			throws IOException, ClassNotFoundException, SQLException {
 		System.out.println("댓글 컨트롤러");
-		String url = "QnA.qna-detail2";
+		String url = "QnA.qna-detail";
 		System.out.println(url);
 		try {
 			url = QandAReplyService.replyReg(dto, request);
