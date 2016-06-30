@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.or.davizn.datainfoDTO.PersonalDataDTO;
 import kr.or.davizn.datainfoDTO.UserStrgDTO;
 import kr.or.davizn.datainfoInterface.CommonDataDAO;
-import kr.or.davizn.datainfoService.Alarm;
 import kr.or.davizn.datainfoService.CommonDataService;
 import kr.or.davizn.datainfoService.PersonalService;
 import kr.or.davizn.datainfoService.UserStrgService;
+import kr.or.davizn.etcService.Alarm;
 import kr.or.davizn.groupDTO.GroupListDTO;
 import kr.or.davizn.groupService.GroupInfoService;
 

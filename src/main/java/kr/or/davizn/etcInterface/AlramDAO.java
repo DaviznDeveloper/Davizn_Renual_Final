@@ -1,9 +1,9 @@
-package kr.or.davizn.datainfoInterface;
+package kr.or.davizn.etcInterface;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kr.or.davizn.datainfoDTO.AlarmDTO;
+import kr.or.davizn.etcDTO.AlarmDTO;
 
 public interface AlramDAO {
 	//알람 갯수

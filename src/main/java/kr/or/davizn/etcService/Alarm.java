@@ -1,4 +1,4 @@
-package kr.or.davizn.datainfoService;
+package kr.or.davizn.etcService;
 
 import java.security.Principal;
 import java.sql.SQLException;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import kr.or.davizn.datainfoDTO.AlarmDTO;
-import kr.or.davizn.datainfoInterface.AlramDAO;
+import kr.or.davizn.etcDTO.AlarmDTO;
+import kr.or.davizn.etcInterface.AlramDAO;
 
 @Service
 public class Alarm {

@@ -1,4 +1,4 @@
-package kr.or.davizn.dataInfoController;
+package kr.or.davizn.etcController;
 
 import java.security.Principal;
 import java.sql.SQLException;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.or.davizn.datainfoService.Alarm;
+import kr.or.davizn.etcService.Alarm;
 
 @Controller
 @RequestMapping("/alarm/")

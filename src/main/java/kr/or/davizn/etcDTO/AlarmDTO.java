@@ -1,4 +1,4 @@
-package kr.or.davizn.datainfoDTO;
+package kr.or.davizn.etcDTO;
 
 import java.sql.Date;
 
