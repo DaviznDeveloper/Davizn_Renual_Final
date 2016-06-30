@@ -64,9 +64,13 @@ public class PersonalDataController {
 		}else if(datatype==2){
 			//스케치 상세 보기
 			view ="redirect:/sketch/detailsketch.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
-		} 	
-			
-		return view;
+		}else if(datatype==3){
+			//목표 상세 보기
+			view = "redirect:/goal/detailGoal.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
+		}else if(datatype==4){
+			//일정 상세보기
+			view = "redirect:/schedule/detailSchedule.dvn?dataseq="+dataseq+"&strgseq="+strgseq;}
+		return view;	
 	}
 	
 	@RequestMapping("detailPersonalData2.dvn")
