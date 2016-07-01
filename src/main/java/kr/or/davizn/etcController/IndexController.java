@@ -10,12 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.or.davizn.etcService.Alarm;
+import kr.or.davizn.messageController.MessageController;
 
 @Controller
 public class IndexController {
 	@Autowired
 	private Alarm alarm;
 
+	@Autowired
+	private MessageController msgcontroller;
 	
 	@RequestMapping("index.dvn")
 	public String moveIndex(Principal principal, HttpSession session){
@@ -32,9 +35,12 @@ public class IndexController {
 		session.getAttribute(userid);
 		System.out.println(userid);
 		int result=alarm.getCount(userid);
+		int total= msgcontroller.getMessageCount(userid);
 		System.out.println("result : "+result);
 		session.setAttribute("alarmList", alarm.showAlarmList(userid, model));
 		session.setAttribute("alarmCount", result);
+		session.setAttribute("msgCount", total);
+		
 		return "home.index"; //select 시키면 됨
 	}
 }
