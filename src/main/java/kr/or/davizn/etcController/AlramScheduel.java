@@ -16,8 +16,8 @@ public class AlramScheduel {
 	public void alram2() throws Exception{
 		
 		System.out.println("알람2울어라/11!@#!@#");
-		//alarm.insertAlram();
-		//alarm.insertscheduel();
+		alarm.insertAlram();
+		alarm.insertscheduel();
 	
 		
 	}
