@@ -14,8 +14,6 @@ import kr.or.davizn.adminDTO.LineChartDTO;
 import kr.or.davizn.adminDTO.PieChartDTO;
 import kr.or.davizn.adminService.AdminService;
 
-
-
 @Controller
 @RequestMapping("/admin/")
 public class adminController {
@@ -90,6 +88,5 @@ public class adminController {
 		List<LineChartDTO> monthlyLineChart = adminservice.monthlyLineChart();
 		return monthlyLineChart;
 	}
-	
-	
+		
 }
