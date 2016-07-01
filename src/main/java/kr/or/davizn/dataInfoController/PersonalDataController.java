@@ -56,15 +56,23 @@ public class PersonalDataController {
    @RequestMapping("detailPersonalData.dvn")
 	public String detailPersonalData(@RequestParam int datatype,
 									 @RequestParam int strgseq,
-									 @RequestParam int dataseq) throws ClassNotFoundException, SQLException{
+									 @RequestParam int dataseq){
 		String view = null;
 		if(datatype==1){
 			//노트 데이터 상세 보기
-			view ="redirect:/note/detailNote.dvn?dataseq="+dataseq+"&strgseq="+strgseq+"&function=d";
+			view ="redirect:/note/detailNote.dvn?dataseq="+dataseq+"&function=d";
 		}else if(datatype==2){
 			//스케치 상세 보기
-			view ="redirect:/sketch/detailsketch.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
-		} 	
+			view ="redirect:/sketch/detailsketch.dvn?dataseq="+dataseq+"&function=d";
+		}else if(datatype==3){
+			//목표 상세 보기
+			view = "redirect:/goal/detailGoal.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
+		}else if(datatype==4){
+			//일정 상세보기
+			view = "redirect:/schedule/detailSchedule.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
+		}else{
+			
+		}
 			
 		return view;
 	}

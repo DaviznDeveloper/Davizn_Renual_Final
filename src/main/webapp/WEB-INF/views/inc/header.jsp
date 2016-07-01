@@ -139,9 +139,12 @@
          <li>
             <se:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                  <se:authentication property="name" var="LoingUser" />
-                     ${LoingUser}님 
+                  <se:authentication property="name" var="LoginUser" />
+                     ${LoginUser}님 
                   </se:authorize> 
+                  
+                  <input type="hidden" id="user-msg" value="${LoginUser}">
+                  
                   <span class="caret"></span> 
                </a>
                <ul class="dropdown-menu">
