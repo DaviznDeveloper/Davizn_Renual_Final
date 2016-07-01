@@ -77,19 +77,6 @@
                      <span class="badge h-menu-tran-badge-mail">${msgCount}</span>
                   </a>
                   <ul class="dropdown-menu">
-                     <c:set var="message" value="${messagList}" />
-                     <c:choose>
-                        <c:when test="${message eq null}">
-                           <li><a href="#"> 새로운 메세지가 없습니다. </a></li>
-                        </c:when>
-
-                        <c:otherwise>
-                           <c:forEach items="${alarmList}" var="al">
-                              <li><a href="${pageContext.request.contextPath}/main-profile.navigation">
-                                    id : 제목제목?? </a></li>
-                           </c:forEach>
-                        </c:otherwise>
-                     </c:choose>
                      <li class="vertical-middle padding-vertical text-center">
                         <a href="${pageContext.request.contextPath}/messageNavigation.dvn">
                            <span class="notice-header-span notice-header-all">전체 쪽지 보기</span>
@@ -139,9 +126,12 @@
          <li>
             <se:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                  <se:authentication property="name" var="LoingUser" />
-                     ${LoingUser}님 
+                  <se:authentication property="name" var="LoginUser" />
+                     ${LoginUser}님 
                   </se:authorize> 
+                  
+                  <input type="hidden" id="user-msg" value="${LoginUser}">
+                  
                   <span class="caret"></span> 
                </a>
                <ul class="dropdown-menu">
