@@ -130,14 +130,14 @@
                                     </label>
                                     </c:if>
                                  
-                                    <label class="btn btn-default calender-priority">
+                                    <!-- <label class="btn btn-default calender-priority">
                                        <input type="radio" name="priority" value="5" id="priority1" autocomplete="off">
                                        <i class="fa fa-star calendar-star" aria-hidden="true"></i>
                                        <i class="fa fa-star calendar-star" aria-hidden="true"></i>
                                        <i class="fa fa-star calendar-star" aria-hidden="true"></i>
                                        <i class="fa fa-star calendar-star" aria-hidden="true"></i>
                                        <i class="fa fa-star calendar-star" aria-hidden="true"></i>
-                                    </label>
+                                    </label> -->
                                     
                                     <c:if test="${schedule.priority eq 4}">
                                        <label class="btn btn-default calender-priority active">

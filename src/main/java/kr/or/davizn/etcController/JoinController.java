@@ -56,8 +56,6 @@ public class JoinController {
 	@RequestMapping(value="newStorage.dvn")
 	public String newStorage(String userid) {
 		String strgname="저장소이름";
-		System.out.println("Hi, 저장소 줄게");
-		
 		storageService.addStorage(strgname, userid);
 		return "joinus.sign-up-ok";
 	}

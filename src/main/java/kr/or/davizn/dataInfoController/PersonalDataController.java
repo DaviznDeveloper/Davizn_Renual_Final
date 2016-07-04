@@ -39,11 +39,11 @@ public class PersonalDataController {
    @RequestMapping("showPersonalDataList.dvn")
    public String showPersonalDataList(Model model, int strgseq,Principal principal){
       List<PersonalDataDTO> pdatalist = personalDataService.showPersonalDataList(strgseq);
-      List<GroupListDTO> grouplist = groupInfoService.getGroupList(principal.getName());
+      //List<GroupListDTO> grouplist = groupInfoService.getGroupList(principal.getName());
       List<UserStrgDTO> storagelist = storageService.showStorageList(principal.getName());
       model.addAttribute("storagelist", storagelist);
       model.addAttribute("pdatalist", pdatalist);
-      model.addAttribute("groupList",grouplist);
+      //model.addAttribute("groupList",grouplist);
       model.addAttribute("strgseq",strgseq);
       model.addAttribute("listsize",pdatalist.size());
       return "datamanage.data-list";
