@@ -10,31 +10,41 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.or.davizn.etcService.Alarm;
+import kr.or.davizn.messageController.MessageController;
 
 @Controller
 public class IndexController {
+
 	@Autowired
 	private Alarm alarm;
 
+	@Autowired
+	private MessageController msgcontroller;
 	
+
+
 	@RequestMapping("index.dvn")
-	public String moveIndex(Principal principal, HttpSession session){
+	public String moveIndex(Principal principal){
 		if(principal ==null){return "home.index";}
-		else{
-		session.setAttribute("userid", principal.getName());
-		return "redirect:davizn.dvn"; }
+		return "redirect:davizn.dvn"; 
 	}
 	
 	@RequestMapping("davizn.dvn")
 	public String moveIndex2(Principal principal,Model model,HttpSession session) throws Exception{
-		System.out.println("index2.dvn 에 들어옴");
-		String userid=principal.getName();
-		session.getAttribute(userid);
-		System.out.println(userid);
+		String userid = principal.getName();
 		int result=alarm.getCount(userid);
-		System.out.println("result : "+result);
-		session.setAttribute("alarmList", alarm.showAlarmList(userid, model));
-		session.setAttribute("alarmCount", result);
+		
+		int total= msgcontroller.getMessageCount(userid);
+		 
+		session.setAttribute("userid", userid);
+		//session.setAttribute("alarmList", alarm.showAlarmList(userid, model));
+		//session.setAttribute("alarmCount", result);
+		
+		session.setAttribute("msgCount", total);
+
+		session.setAttribute("armCount", result);
+
 		return "home.index"; //select 시키면 됨
 	}
+	
 }

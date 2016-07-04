@@ -77,24 +77,7 @@ public class PersonalDataController {
 		return view;
 	}
 	
-	@RequestMapping("detailPersonalData2.dvn")
-	public String detailPersonalData(@RequestParam int datatype,
-									 @RequestParam int strgseq,
-									 @RequestParam int dataseq,
-									 @RequestParam int alarmseq) throws ClassNotFoundException, SQLException{
-		System.out.println("타긴 하냐?");
-		String view=null;
-		if(datatype==3){
-			//목표 상세 보기
-			alarmservice.stateUp(alarmseq);
-			view = "redirect:/goal/detailGoal.dvn?dataseq="+dataseq+"&strgseq="+strgseq;
-		}else if(datatype==4){
-			//일정 상세보기
-			alarmservice.stateUp(alarmseq);
-			view = "redirect:/schedule/detailSchedule.dvn?dataseq="+dataseq+"&strgseq="+strgseq;}
-		return view;
 
-	}
  	
  	//개인 데이터 삭제
  	@RequestMapping("deletePersonalData.dvn")

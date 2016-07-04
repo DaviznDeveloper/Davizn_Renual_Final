@@ -7,14 +7,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getGroup">
 		select * from groupdata where dataseq=#{dataseq}
 	</select>
+	
 	<!--그룹 목록 random select-->
 	<select id="randomGroupList" resultType="kr.or.davizn.groupDTO.GroupInfoDTO">
-	 <![CDATA[ 
-	 	select *
- 	 	from groupinfo
- 	 	where rownum <=5
- 	 	order by dbms_random.value
- 	 ]]> 
+		<![CDATA[ 
+				 	select *
+			 	 	from groupinfo
+			 	 	where rownum <=5
+			 	 	order by dbms_random.value
+ 	 	]]> 
 	</select>
 	
 	<!--검색한 그룹 리스트 가져오기-->
