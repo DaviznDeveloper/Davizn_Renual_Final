@@ -26,14 +26,12 @@ public class IndexController {
 	@RequestMapping("index.dvn")
 	public String moveIndex(Principal principal){
 		if(principal ==null){return "home.index";}
-		return "redirect:index2.dvn?userid=" + principal.getName(); 
+		return "redirect:davizn.dvn"; 
 	}
 	
-	@RequestMapping("index2.dvn")
-	public String moveIndex2(String userid,Model model,HttpSession session) throws Exception{
-		System.out.println("index2.dvn 에 들어옴");
-		System.out.println(userid);
-
+	@RequestMapping("davizn.dvn")
+	public String moveIndex2(Principal principal,Model model,HttpSession session) throws Exception{
+		String userid = principal.getName();
 		int result=alarm.getCount(userid);
 		
 		int total= msgcontroller.getMessageCount(userid);
