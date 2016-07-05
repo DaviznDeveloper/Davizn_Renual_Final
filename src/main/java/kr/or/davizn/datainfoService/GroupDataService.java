@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import kr.or.davizn.datainfoDTO.GroupDataDTO;
 import kr.or.davizn.datainfoInterface.GroupDataDAO;
-import kr.or.davizn.datasetDTO.PersonalDataNoteDTO;
 
 @Service
 public class GroupDataService {

@@ -49,4 +49,6 @@ public class CommonDataService {
 		CommonDataDAO commonDAO = sqlsession.getMapper(CommonDataDAO.class);
 		commonDAO.deleteDataseq(dataseq);
 	}
+	
+	
 }
