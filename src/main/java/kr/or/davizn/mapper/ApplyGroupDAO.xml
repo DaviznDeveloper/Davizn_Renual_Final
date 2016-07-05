@@ -10,10 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from applygroup where groupseq=#{groupseq}
 	</select>
 	
+	<!-- applygroup 테이블에 존재하는 회원인지 확인(이미 신청한 회원인지 확인) -->
 	<select id="checkMember" parameterType="kr.or.davizn.groupDTO.ApplyGroupDTO" resultType="Integer">
 		select count(g_applyseq) from applygroup where userid=#{userid} and groupseq=#{groupseq}
 	</select>
 	
+	<!-- applygroup 테이블에 회원 추가 -->
 	<insert id="addApplyMember" parameterType="kr.or.davizn.groupDTO.ApplyGroupDTO">
 		insert into applygroup (g_applyseq,userid,groupseq,applydate)
 		values(gapply_seq.nextval,#{userid},#{groupseq},sysdate)

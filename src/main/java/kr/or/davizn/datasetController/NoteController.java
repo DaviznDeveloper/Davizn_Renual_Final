@@ -48,7 +48,7 @@ public class NoteController {
 	}
 
 	@RequestMapping("modifyGroupNote.dvn")
-	public String modify(HttpServletRequest request,VersionDTO versiondto,GroupDataDTO groupdatadto,Principal principal) throws IOException{
+	public String modifyGroupNote(HttpServletRequest request,VersionDTO versiondto,GroupDataDTO groupdatadto,Principal principal) throws IOException{
 		int dataseq = versiondto.getDataseq();
 		int datatype = groupdatadto.getDatatype();
 		int groupseq = groupdataService.getOneGroupData(dataseq).getGroupseq();

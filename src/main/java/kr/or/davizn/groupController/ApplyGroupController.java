@@ -24,7 +24,6 @@ public class ApplyGroupController {
 	@RequestMapping(value="applyGroup.dvn",produces="application/text; charset=utf8")
 	@Transactional
 	public @ResponseBody String applyGroup(Principal principal,@RequestParam int groupseq){
-		System.out.println("comcom");
 		ApplyGroupDTO applydto = new ApplyGroupDTO();
 		applydto.setUserid(principal.getName());
 		applydto.setGroupseq(groupseq);

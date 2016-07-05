@@ -116,7 +116,7 @@ public class GroupDataController {
 		else {return "redirect:/schedule/detailSchedule.dvn";}
 	}
 	
-	@RequestMapping("deletleShareData.dvn")
+	@RequestMapping("deleteShareData.dvn")
 	public String deleteShareData(int dataseq){
 		groupdataService.deleteGroupDataTable(dataseq);
 		commonService.deleteDataseq(dataseq);

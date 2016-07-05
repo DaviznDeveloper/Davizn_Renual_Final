@@ -101,15 +101,6 @@ public class GroupController {
 	   List<ApplyGroupDTO> applylist = applyService.showApplylist(groupseq);
 	   List<GroupMemberDTO> memberlist = gmService.getMemberlis(groupseq); 
 	   
-	   
-	   
-	   
-	   for(GroupMemberDTO dto:memberlist){
-		   System.err.println("Role name은 "+dto.getRole_name());
-	   }
-	   
-	   
-	   
 	   model.addAttribute("groupseq",groupseq);
 	   model.addAttribute("userid",principal.getName());
 	   model.addAttribute("authoList",authoList);

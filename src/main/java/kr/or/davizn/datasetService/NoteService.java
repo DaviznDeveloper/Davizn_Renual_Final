@@ -36,8 +36,9 @@ public class NoteService {
 		NoteDAO dao = sqlsession.getMapper(NoteDAO.class);
 		System.out.println("dataseq : " + dataseq);
 		PersonalDataNoteDTO note = dao.detailPNote(dataseq);
-		if(note == null){System.out.println("그룹에서 온 데이터 입니다.");note = dao.detailGNote(dataseq);
-		System.out.println(note.getDataseq());}
+		if(note == null){
+			note = dao.detailGNote(dataseq);
+		}
 		String fname = note.getFilepath();
 		System.out.println("fname : " + fname);
 		String fpath = request.getRealPath("/resources/notefile");
