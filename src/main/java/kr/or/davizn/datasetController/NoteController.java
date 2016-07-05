@@ -56,7 +56,7 @@ public class NoteController {
 		String datahtml = versiondto.getDatahtml();
 		String fileName = commonService.getFileName(principal.getName());
 		String userid = principal.getName();
-
+		
 		versiondto.setUserid(userid);
 		versiondto.setGroupseq(groupseq);
 		versiondto.setFilename(fileName);

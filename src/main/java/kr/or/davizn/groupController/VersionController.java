@@ -20,6 +20,9 @@ import kr.or.davizn.groupService.VersionService;
 public class VersionController {
 	
 	@Autowired
+	NoteService noteservice;
+	
+	@Autowired
 	VersionService versionService;
 
 	@RequestMapping("showVerionlist")
@@ -28,13 +31,10 @@ public class VersionController {
 		//가장 최근에 수정한 버전
 		VersionDTO newversion = versionlist.get(versionlist.size()-1);
 		
-		for(VersionDTO dto:versionlist){
-			System.out.println(dto.getDataseq());
-			System.out.println("datahtml : "+dto.getDatahtml());
-		}
+		PersonalDataNoteDTO note = noteservice.detailNote(request, dataseq);
 		
 		//이미지로 변환될 부분의 내용
-		 model.addAttribute("datahtml",newversion.getDatahtml());
+		 model.addAttribute("datahtml",note.getDatahtml());
 	     model.addAttribute("dataname",newversion.getDataname());
 	     model.addAttribute("userid", newversion.getUserid());
 	     model.addAttribute("datacreate", newversion.getModifytime());
