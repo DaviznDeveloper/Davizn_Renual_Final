@@ -48,7 +48,8 @@ public class NoteController {
 	}
 
 	@RequestMapping("modifyGroupNote.dvn")
-	public String modify(HttpServletRequest request,VersionDTO versiondto,GroupDataDTO groupdatadto,Principal principal) throws IOException{
+	public String modify(HttpServletRequest request,VersionDTO versiondto,
+			GroupDataDTO groupdatadto,Principal principal) throws IOException{
 		int dataseq = versiondto.getDataseq();
 		int datatype = groupdatadto.getDatatype();
 		int groupseq = groupdataService.getOneGroupData(dataseq).getGroupseq();
@@ -59,12 +60,15 @@ public class NoteController {
 		versiondto.setUserid(userid);
 		versiondto.setGroupseq(groupseq);
 		versiondto.setFilename(fileName);
+		
 		commonService.makeFile(datatype, datahtml, userid, request, fileName);
 		groupdataService.updateGroupdata(groupdatadto);
 		notedataService.modifyNoteFile(dataseq, request, datahtml);
 		versionService.addVersion(versiondto);
+
 		return "redirect:/version/showVerionlist.dvn?dataseq="+dataseq;
 	}
+	
 	
 	
 	// 노트 데이터 추가
